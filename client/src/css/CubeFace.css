@@ -1,0 +1,21 @@
+.cube-face {
+    aspect-ratio: 1;
+    background: var(--cube-plastic);
+    border-radius: 10%;
+}
+
+/* Padding percentages resolve against the parent's width, so they live on this inner
+   grid where the parent is the face itself */
+.cube-face-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6%;
+    padding: 6%;
+}
+
+.cube-face .sticker {
+    aspect-ratio: 1;
+    background: var(--face-color);
+    border-radius: 18%;
+    box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.15);
+}
