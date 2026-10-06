@@ -1,0 +1,53 @@
+.all-events-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.all-events-header h2 {
+    margin: 0;
+}
+
+.all-events-header p {
+    margin: 0;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+}
+
+.event-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.event-filters label {
+    flex: 1 1 200px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.event-filters select {
+    margin: 0.35rem 0 0;
+}
+
+.event-filters .hide-past {
+    flex: 0 1 auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-bottom: 0.75rem;
+}
+
+.event-filters .hide-past input {
+    margin: 0;
+}
