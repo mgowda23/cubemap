@@ -1,55 +1,59 @@
 import React from 'react'
-import { useRoutes, Link } from 'react-router-dom'
+import { useRoutes, Link, NavLink } from 'react-router-dom'
 import Locations from './pages/Locations'
 import LocationEvents from './pages/LocationEvents'
 import Events from './pages/Events'
 import './App.css'
 
+const NotFound = () => (
+    <section className='status-message'>
+        <h2>DNF: page not found</h2>
+        <Link to='/' role='button'>Back to the cube</Link>
+    </section>
+)
+
 const App = () => {
-  let element = useRoutes([
-    {
-      path: '/',
-      element: <Locations />
-    },
-    {
-      path: '/echolounge',
-      element: <LocationEvents index={1} />
-    },
-    {
-      path: '/houseofblues',
-      element: <LocationEvents index={2} />
-    },
-    {
-      path: '/pavilion',
-      element: <LocationEvents index={3} />
-    },
-    {
-      path: '/americanairlines',
-      element: <LocationEvents index={4} />
-    },
-    {
-      path: '/events',
-      element: <Events />
-    }
-  ])
+    let element = useRoutes([
+        {
+            path: '/',
+            element: <Locations />
+        },
+        {
+            path: '/locations/:slug',
+            element: <LocationEvents />
+        },
+        {
+            path: '/events',
+            element: <Events />
+        },
+        {
+            path: '*',
+            element: <NotFound />
+        }
+    ])
 
-  return (
-    <div className='app'>
+    return (
+        <div className='app'>
+            <header className='main-header'>
+                <Link to='/' className='brand'>
+                    <span className='brand-logo' aria-hidden='true'>
+                        <span className='cube-orange' /><span className='cube-white' />
+                        <span className='cube-green' /><span className='cube-red' />
+                    </span>
+                    <h1>CubeMap</h1>
+                </Link>
 
-      <header className='main-header'>
-        <h1>CubeMap</h1>
+                <nav className='header-nav'>
+                    <NavLink to='/' end>Regions</NavLink>
+                    <NavLink to='/events'>All Events</NavLink>
+                </nav>
+            </header>
 
-        <div className='header-buttons'>
-          <Link to='/' role='button'>Home</Link>
-          <Link to='/events' role='button'>Events</Link>
+            <main>
+                {element}
+            </main>
         </div>
-      </header>
-
-      <main>
-        {element}
-      </main>
-    </div>
-  )
+    )
 }
 
 export default App

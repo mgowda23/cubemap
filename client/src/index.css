@@ -1,78 +1,71 @@
-@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;800;900&display=swap');
+:root {
+    --cube-white: #f4f4f0;
+    --cube-orange: #ff8a1f;
+    --cube-green: #19a974;
+    --cube-red: #e5383b;
+    --cube-blue: #2f6fed;
+    --cube-yellow: #ffd60a;
+    --cube-plastic: #11141c;
 
-#root {
-    background: url('./assets/unitygrid.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+    --bg: #0b0e15;
+    --surface: #151a25;
+    --surface-raised: #1c2331;
+    --border: #2a3245;
+    --text: #e8ebf2;
+    --text-muted: #9aa3b5;
+
+    --font-display: 'Space Grotesk', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* Pico CSS dark-theme overrides */
+[data-theme='dark'] {
+    --background-color: var(--bg);
+    --color: var(--text);
+    --muted-color: var(--text-muted);
+    --font-family: var(--font-body);
+    --primary: var(--cube-yellow);
+    --primary-hover: #ffe45c;
+    --primary-focus: rgba(255, 214, 10, 0.25);
+    --primary-inverse: #11141c;
+    --h1-color: var(--text);
+    --h2-color: var(--text);
+    --h3-color: var(--text);
+    --form-element-background-color: var(--surface);
+    --form-element-border-color: var(--border);
+    --form-element-active-border-color: var(--cube-yellow);
+    --switch-checked-background-color: var(--cube-green);
+    --card-background-color: var(--surface);
+}
+
+body {
+    background:
+        radial-gradient(circle at 15% 0%, rgba(47, 111, 237, 0.12), transparent 40%),
+        radial-gradient(circle at 90% 20%, rgba(229, 56, 59, 0.08), transparent 35%),
+        var(--bg);
     background-attachment: fixed;
-    background-color: var(--secondary-color);
-    font-family: Nunito Sans, Verdana, sans-serif;
-    height: 100vh;
-    --main-color: rgb(217, 29, 242);
-    --secondary-color: rgb(3, 1, 64);
-    --primary: var(--main-color);
-    --primary-hover: rgb(111, 28, 166);
-    --primary-focus: rgb(217, 29, 242);
-    --secondary: var(--secondary-color);
-    --secondary-hover: rgb(4, 66, 191);
-    --secondary-focus: rgb(111, 28, 166);
-    --h1-color: white;
-    --h2-color: white;
-    --h3-color: white;
-    --card-background-color: none;
-    --form-element-background-color: white;
-    --form-element-border-color: var(--main-color);
-    --form-element-color: black;
-    --form-element-placeholder-color: black;
-    --form-element-active-border-color: var(--secondary-color);
-    --form-element-active-background-color: white;
+    min-height: 100vh;
 }
 
-#root h1, #root h2, #root h3 {
-    text-transform: uppercase;
-    margin-bottom: 0px;
+h1, h2, h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
 }
 
-#root h1 {
-    font-family: Rock Salt, cursive;
-    font-size: 3em;
-    font-weight: bold;
-    text-shadow: 3px 3px 4px black;
+.cube-white { --face-color: var(--cube-white); }
+.cube-orange { --face-color: var(--cube-orange); }
+.cube-green { --face-color: var(--cube-green); }
+.cube-red { --face-color: var(--cube-red); }
+.cube-blue { --face-color: var(--cube-blue); }
+.cube-yellow { --face-color: var(--cube-yellow); }
+
+.status-message {
+    text-align: center;
+    color: var(--text-muted);
+    padding: 3rem 1rem;
 }
 
-#root h2 {
-    font-family: Nunito Sans, Verdana, sans-serif;
-    font-size: 2em;
-    font-weight: 800;
-}
-
-#root h3 {
-    font-family: Nunito Sans, Verdana, sans-serif;
-    font-size: 1.3em;
-    font-weight: 800;
-}
-
-#root main {
-    display: flex;
-    justify-content: center;
-}
-
-#root [role=button] {
-    text-transform: uppercase;
-    font-weight: 900;
-    font-size: 1.5em;
-    border: 2px solid white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#root article {
-    padding: 0px;
-}
-
-#root select {
-    width: 400px;
+.status-message h2 {
+    margin-bottom: 1.5rem;
 }

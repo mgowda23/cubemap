@@ -1,33 +1,73 @@
 .app {
-    background: url('./assets/unitygrid.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-}
-
-header {
-    padding: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px 4rem;
 }
 
 .main-header {
-    height: 30vh;
-    width: 85vw;
-    align-items: flex-end;
-    position: relative;
-    z-index: 1;
-}
-
-.header-buttons {
-    width: 30%;
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 2rem;
 }
 
-.header-buttons button {
-    margin-right: 20px;
-    margin-left: 20px;
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+}
+
+.brand h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: var(--text);
+}
+
+.brand-logo {
+    display: grid;
+    grid-template-columns: repeat(2, 14px);
+    gap: 3px;
+    padding: 4px;
+    background: var(--cube-plastic);
+    border-radius: 6px;
+    transition: transform 0.4s ease;
+}
+
+.brand:hover .brand-logo {
+    transform: rotate(90deg);
+}
+
+.brand-logo span {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    background: var(--face-color);
+}
+
+.header-nav {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.header-nav a {
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.header-nav a:hover {
+    color: var(--text);
+    background: var(--surface);
+}
+
+.header-nav a.active {
+    color: var(--primary-inverse);
+    background: var(--cube-yellow);
 }
