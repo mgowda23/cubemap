@@ -1,39 +1,59 @@
-.location-events {
-    width: 100%;
+.location-header {
     display: flex;
-    flex-direction: column;
-    flex-wrap: no-wrap;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
 }
 
-.location-events header {
-    background-color: var(--main-color);
+.location-face {
+    width: 120px;
+    flex-shrink: 0;
+}
+
+.back-link {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    text-decoration: none;
+}
+
+.back-link:hover {
+    color: var(--text);
+}
+
+.location-header h2 {
+    margin: 0.25rem 0 0.5rem;
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
+}
+
+.location-header p {
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.location-stats {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+}
+
+.events-grid {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    column-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+    gap: 1.25rem;
 }
 
-.location-image img {
-    width: 300px;
-    height: auto;
-    border: 1px solid white;
-    margin-left: 20px;
-}
+@media (max-width: 600px) {
+    .location-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.25rem;
+    }
 
-.location-events header p {
-    color: white;
-    font-size: 0.8em;
-    margin-bottom: 0px;
-}
-
-.location-events main {
-    text-align: center;
-    padding: 30px;
-    margin: 30px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.location-events main i {
-    margin-right: 10px;
+    .location-face {
+        width: 72px;
+    }
 }
